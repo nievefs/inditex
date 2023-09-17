@@ -5,6 +5,7 @@ import com.ecommerce.apih2.price.application.usecase.GetPriceUseCase;
 import com.ecommerce.apih2.price.domain.error.ApiError;
 import com.ecommerce.apih2.price.domain.exception.PriceNotFoundException;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import org.springframework.http.HttpStatus;
@@ -32,9 +33,9 @@ public class GetPriceController {
             @ApiResponse(responseCode = "400", description = "Invalid date")})
     @GetMapping(value = "/final-price", produces = "application/json;charset=UTF-8" )
     public @ResponseBody ResponseEntity<?> getPrice(
-            @RequestParam("date") String date,
-            @RequestParam("productId") Long productId,
-            @RequestParam("brandId") int brandId
+            @Parameter(description = "Date format yyyy-MM-dd HH:mm:ss") @RequestParam("date") String date,
+            @Parameter(description = "Product id example 35000") @RequestParam("productId") Long productId,
+            @Parameter(description = "Brand id example 1") @RequestParam("brandId") int brandId
     ){
         try{
             GetPriceParam params = new GetPriceParam(date, productId, brandId);

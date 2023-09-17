@@ -1,4 +1,4 @@
-package infrestructure.adapter;
+package infrastructure.adapter;
 
 import com.ecommerce.apih2.Entrypoint;
 import com.ecommerce.apih2.price.application.mapper.DateMapper;

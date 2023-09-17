@@ -1,4 +1,4 @@
-package infrestructure.controller;
+package infrastructure.controller;
 
 import com.ecommerce.apih2.price.application.dto.PriceResponseDto;
 import com.ecommerce.apih2.price.application.param.GetPriceParam;
