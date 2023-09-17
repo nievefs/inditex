@@ -2,8 +2,18 @@
 
 - Construir una aplicación/servicio en SpringBoot que provea un end ponit rest de consulta.
 
-**Tabla de Contenidos**
-[TOC]
+###Contenido
+Introducción
+Arquitectura y Diseño
+Introducciones de Ejecución
+	1.Ejecutar la Aplicación
+        2.Ejecutar las Test
+Configurar la Conexión a la Base de Datos
+	1.Acceder a la Consola H2
+ 	2.Configurar la conexión a la Base de Datos
+   	3.Consultar Datos
+    	4.Ejecutar Pruebas
+Documentación de la API
 
 ## Introducción
 - En la base de datos de comercio electrónico de la compañía disponemos de la tabla PRICES que refleja el precio final (pvp) y la tarifa que aplica a un producto de una cadena entre unas fechas determinadas. A continuación se muestra un ejemplo de la tabla con los campos relevantes:
@@ -40,7 +50,7 @@ CURR: iso de la moneda.
 	Abrir el proyecto en el IDE preferido (por ejemplo, IntelliJ IDEA o Eclipse).
 	Localizar la clase principal (/src/main/java/com.ecommerce.apih2/Entrypoint) y ejecutarla.
 	La aplicación se iniciará en http://localhost:8080.
-####2. Pruebas:
+####2. Ejecutar los Test:
 	Se han implementado pruebas unitarias y de integración que se pueden ejecutar utilizando un IDE o Maven para realizar las pruebas.
 	Por ejmplo: si usamos IntelliJ IDEA, desde el directorio `/src/test/java`, click menú lateral selccionar Run 'Test in java'
 
