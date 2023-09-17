@@ -40,7 +40,7 @@ CURR: iso de la moneda.
 
  ****Nota**: Estas 5 casuísticas de prueba se encuentran implementadas en el fichero de `/src/test/java/infrastructure/adapter/PriceFinderServiceTest`
 
-## Arquitectuta y Diseño
+## Arquitectura y Diseño
 - Este proyecto sigue una arquitectura hexagonal (Hexagonal Architecture) y utiliza el enfoque de Domain-Driven Design (DDD) para organizar el código y garantizar una estructura clara y mantenible. Los detalles de diseño específicos se pueden encontrar en los paquetes y clases relevantes dentro del código fuente.
 
 
@@ -65,6 +65,7 @@ En la página de inicio de la consola de H2, completa los siguientes campos:
 - **JDBC URL:**  jdbc:h2:mem:testdb
 - **User Name:** nieve
 - **Password:** 123
+
 Luego, click en el botón "Connect".
 #### 3. Consultar los Datos
 Una vez realizada la conexión, se podrán consultar los datos almacenados en la base de datos H2. Se pueden realizar consultas personalizadas e interactuar con la tabla `PRICE` y los registros predefinidos por la aplicación.
