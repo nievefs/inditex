@@ -3,7 +3,6 @@
 - Construir una aplicación/servicio en SpringBoot que provea un end ponit rest de consulta.
 
 **Tabla de Contenidos**
-[TOCM]
 [TOC]
 
 ## Introducción
