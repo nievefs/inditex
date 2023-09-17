@@ -6,17 +6,17 @@
 - Introducción
 - Arquitectura y Diseño
 - Introducciones de Ejecución
- * 1.Ejecutar la Aplicación
- * 2.Ejecutar las Test
+  * 1.Ejecutar la Aplicación
+  * 2.Ejecutar las Test
 - Configurar la Conexión a la Base de Datos
- * 1.Acceder a la Consola H2
- * 2.Configurar la conexión a la Base de Datos
- * 3.Consultar Datos
- * 4.Ejecutar Pruebas
+  * 1.Acceder a la Consola H2
+  * 2.Configurar la conexión a la Base de Datos
+  * 3.Consultar Datos
+  * 4.Ejecutar Pruebas
 - Documentación de la API
 
 ## Introducción
-- En la base de datos de comercio electrónico de la compañía disponemos de la tabla PRICES que refleja el precio final (pvp) y la tarifa que aplica a un producto de una cadena entre unas fechas determinadas. A continuación se muestra un ejemplo de la tabla con los campos relevantes:
+- En la base de datos del comercio electrónico de la compañía, disponemos de la tabla PRICES que refleja el precio final (pvp) y la tarifa que aplica a un producto de una cadena entre unas fechas determinadas. A continuación se muestra un ejemplo de la tabla con los campos relevantes:
 
 	Campos:
 ```
@@ -30,12 +30,12 @@ CURR: iso de la moneda.
 ```
 
 
-* Desarrollar unos test al endpoint rest que validen las siguientes peFciones al servicio con los datos del ejemplo:
-- Test 1: peFción a las 10:00 del día 14 del producto 35455 para la brand 1 (ZARA)
-- Test 2: peFción a las 16:00 del día 14 del producto 35455 para la brand 1 (ZARA)
-- Test 3: peFción a las 21:00 del día 14 del producto 35455 para la brand 1 (ZARA)
-- Test 4: peFción a las 10:00 del día 15 del producto 35455 para la brand 1 (ZARA)
-- Test 5: peFción a las 21:00 del día 16 del producto 35455 para la brand 1 (ZARA)
+* Desarrollar unos test al endpoint rest que validen las siguientes peticiones al servicio con los datos del ejemplo:
+- Test 1: petición a las 10:00 del día 14 del producto 35455 para la brand 1 (ZARA)
+- Test 2: petición a las 16:00 del día 14 del producto 35455 para la brand 1 (ZARA)
+- Test 3: petición a las 21:00 del día 14 del producto 35455 para la brand 1 (ZARA)
+- Test 4: petición a las 10:00 del día 15 del producto 35455 para la brand 1 (ZARA)
+- Test 5: petición a las 21:00 del día 16 del producto 35455 para la brand 1 (ZARA)
 
 
  ****Nota**: Estas 5 casuísticas de prueba se encuentran implementadas en el fichero de `/src/test/java/infrastructure/adapter/PriceFinderServiceTest`
@@ -45,14 +45,15 @@ CURR: iso de la moneda.
 
 
 ## Introducciones de ejecución
+
 - A continuación, se describen los pasos para ejecutar y probar el proyecto:
-####1. Ejecutar la Aplicación:
-	Abrir el proyecto en el IDE preferido (por ejemplo, IntelliJ IDEA o Eclipse).
-	Localizar la clase principal (/src/main/java/com.ecommerce.apih2/Entrypoint) y ejecutarla.
-	La aplicación se iniciará en http://localhost:8080.
-####2. Ejecutar los Test:
-	Se han implementado pruebas unitarias y de integración que se pueden ejecutar utilizando un IDE o Maven para realizar las pruebas.
-	Por ejmplo: si usamos IntelliJ IDEA, desde el directorio `/src/test/java`, click menú lateral selccionar Run 'Test in java'
+#### 1. Ejecutar la Aplicación
+Abrir el proyecto en el IDE preferido (por ejemplo, IntelliJ IDEA o Eclipse).
+Localizar la clase principal (/src/main/java/com.ecommerce.apih2/Entrypoint) y ejecutarla.
+La aplicación se iniciará en http://localhost:8080.
+#### 2. Ejecutar los Test
+Se han implementado pruebas unitarias y de integración que se pueden ejecutar utilizando un IDE o Maven para realizar las pruebas.
+Por ejmplo: si usamos IntelliJ IDEA, desde el directorio `/src/test/java`, click menú lateral selccionar Run 'Test in java'
 
 ## Configuración de la Base de Datos
 
@@ -61,7 +62,6 @@ CURR: iso de la moneda.
 H2 proporciona una consola web que te permite interactuar con la base de datos de manera sencilla. Abre tu navegador web y accede a la siguiente URL: http://localhost:8080/h2-console
 #### 2. Configurar la Conexión a la Base de Datos
 En la página de inicio de la consola de H2, completa los siguientes campos:
-
 - **JDBC URL:**  jdbc:h2:mem:testdb
 - **User Name:** nieve
 - **Password:** 123
@@ -75,6 +75,7 @@ Este proyecto incluye pruebas que se ejecutan en una base de datos H2 en memoria
 ## Documentación del API
 - La API proporciona un punto final REST que permite consultar los precios de acuerdo con ciertos parámetros. A continuación, se muestra cómo utilizarlo (por ejemplo desde un cliente http como Postman):
 URL del Endpoint: http://localhost:8080/final-price
+
 
 - **Parámetros Query de Entrada**:
 ```
