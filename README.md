@@ -3,20 +3,22 @@
 - Construir una aplicación/servicio en SpringBoot que provea un end ponit rest de consulta.
 
 **Tabla de Contenidos**
-
+[TOCM]
 [TOC]
 
 ## Introducción
 - En la base de datos de comercio electrónico de la compañía disponemos de la tabla PRICES que refleja el precio final (pvp) y la tarifa que aplica a un producto de una cadena entre unas fechas determinadas. A continuación se muestra un ejemplo de la tabla con los campos relevantes:
 
 	Campos:
-- BRAND_ID: foreign key de la cadena del grupo (1 = ZARA).
-- START_DATE , END_DATE: rango de fechas en el que aplica el precio tarifa indicado.
-- PRICE_LIST: Identificador de la tarifa de precios aplicable.
-- PRODUCT_ID: Identificador código de producto.
-- PRIORITY: Desambiguador de aplicación de precios. Si dos tarifas coinciden en un rango de fechas se aplica la de mayor prioridad (mayor valor numérico).
-- PRICE: precio final de venta.
-- CURR: iso de la moneda.
+```
+BRAND_ID: foreign key de la cadena del grupo (1 = ZARA).
+START_DATE , END_DATE: rango de fechas en el que aplica el precio tarifa indicado.
+PRICE_LIST: Identificador de la tarifa de precios aplicable.
+PRODUCT_ID: Identificador código de producto.
+PRIORITY: Desambiguador de aplicación de precios. Si dos tarifas coinciden en un rango de fechas se aplica la de mayor prioridad (mayor valor numérico).
+PRICE: precio final de venta.
+CURR: iso de la moneda.
+```
 
 
 * Desarrollar unos test al endpoint rest que validen las siguientes peFciones al servicio con los datos del ejemplo:
