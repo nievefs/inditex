@@ -2,18 +2,18 @@
 
 - Construir una aplicación/servicio en SpringBoot que provea un end ponit rest de consulta.
 
-###Contenido
-Introducción
-Arquitectura y Diseño
-Introducciones de Ejecución
-	1.Ejecutar la Aplicación
-        2.Ejecutar las Test
-Configurar la Conexión a la Base de Datos
-	1.Acceder a la Consola H2
- 	2.Configurar la conexión a la Base de Datos
-   	3.Consultar Datos
-    	4.Ejecutar Pruebas
-Documentación de la API
+### Contenido
+- Introducción
+- Arquitectura y Diseño
+- Introducciones de Ejecución
+ * 1.Ejecutar la Aplicación
+ * 2.Ejecutar las Test
+- Configurar la Conexión a la Base de Datos
+ * 1.Acceder a la Consola H2
+ * 2.Configurar la conexión a la Base de Datos
+ * 3.Consultar Datos
+ * 4.Ejecutar Pruebas
+- Documentación de la API
 
 ## Introducción
 - En la base de datos de comercio electrónico de la compañía disponemos de la tabla PRICES que refleja el precio final (pvp) y la tarifa que aplica a un producto de una cadena entre unas fechas determinadas. A continuación se muestra un ejemplo de la tabla con los campos relevantes:
