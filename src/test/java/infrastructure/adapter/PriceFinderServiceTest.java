@@ -110,7 +110,7 @@ public class PriceFinderServiceTest {
     void test5_findPriceForDateAndProductAndBrand() {
 
         Optional<Price> price = priceFinderService.findByParams(
-                new PriceApplicationDate(dateMapper.mapToLocalDateTime("2020-06-15 21:00:00")),
+                new PriceApplicationDate(dateMapper.mapToLocalDateTime("2020-06-16 21:00:00")),
                 new ProductId(35455L),
                 new BrandId(1)
         );
