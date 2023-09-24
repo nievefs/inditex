@@ -1,8 +1,8 @@
 package com.ecommerce.apih2.price.infrastructure.controller;
 
 import com.ecommerce.apih2.price.application.param.GetPriceParam;
-import com.ecommerce.apih2.price.application.usecase.GetPriceUseCase;
 import com.ecommerce.apih2.price.domain.entity.Price;
+import com.ecommerce.apih2.price.domain.usecase.GetPriceUseCase;
 import com.ecommerce.apih2.price.infrastructure.presenter.PricePresenter;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;

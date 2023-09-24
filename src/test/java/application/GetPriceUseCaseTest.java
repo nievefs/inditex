@@ -1,7 +1,7 @@
 package application;
 
 import com.ecommerce.apih2.price.application.param.GetPriceParam;
-import com.ecommerce.apih2.price.application.usecase.GetPriceUseCase;
+import com.ecommerce.apih2.price.application.usecase.GetPriceUseCaseImpl;
 import com.ecommerce.apih2.price.domain.entity.Price;
 import com.ecommerce.apih2.price.domain.exception.PriceNotFoundException;
 import com.ecommerce.apih2.price.domain.port.DateMapper;
@@ -30,13 +30,13 @@ public class GetPriceUseCaseTest {
     @Autowired
     private DateMapper dateMapper;
 
-    private GetPriceUseCase useCase;
+    private GetPriceUseCaseImpl useCase;
 
     @BeforeEach
     void setUp(){
         dateMapper = mock(DateMapper.class);
         priceRepository = mock(PriceRepository.class);
-        useCase = new GetPriceUseCase(priceRepository, dateMapper);
+        useCase = new GetPriceUseCaseImpl(priceRepository, dateMapper);
     }
 
     @Test
