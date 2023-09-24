@@ -1,6 +1,5 @@
-package com.ecommerce.apih2.price.application.mapper;
+package com.ecommerce.apih2.price.infrastructure.mapper;
 
-import com.ecommerce.apih2.price.application.dto.PriceResponseDto;
 import com.ecommerce.apih2.price.infrastructure.entity.PriceEntity;
 import com.ecommerce.apih2.price.domain.entity.Price;
 import com.ecommerce.apih2.price.domain.vo.*;
@@ -22,16 +21,4 @@ public class PriceMapper {
             new Curr(entity.getCurr())
         );
     }
-
-    public PriceResponseDto toDto(Price price){
-        return new PriceResponseDto(
-                price.getProductId().value(),
-                price.getBrandId().value(),
-                price.getPriceList().value(),
-                price.getStartDate().value().toString(),
-                price.getEndDate().value().toString(),
-                price.getFinalPrice().value()
-        );
-    }
-
 }

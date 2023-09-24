@@ -1,6 +1,7 @@
 package com.ecommerce.apih2.price.domain.entity;
 
 import com.ecommerce.apih2.price.domain.vo.*;
+
 public class Price {
     private PriceId id;
     private BrandId brandId;
@@ -37,7 +38,6 @@ public class Price {
     public PriceId getId() {
         return id;
     }
-
     public BrandId getBrandId() {
         return brandId;
     }
@@ -50,7 +50,6 @@ public class Price {
     public PriceList getPriceList() {
         return priceList;
     }
-
     public ProductId getProductId() {
         return productId;
     }

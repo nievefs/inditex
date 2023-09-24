@@ -1,9 +1,10 @@
 package infrastructure.controller;
 
-import com.ecommerce.apih2.price.application.dto.PriceResponseDto;
+import infrastructure.PriceFixture;
 import com.ecommerce.apih2.price.application.param.GetPriceParam;
 import com.ecommerce.apih2.price.application.usecase.GetPriceUseCase;
 import com.ecommerce.apih2.price.infrastructure.controller.GetPriceController;
+import com.ecommerce.apih2.price.infrastructure.dto.PriceResponseDto;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
@@ -13,6 +14,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
+
 import static org.mockito.Mockito.when;
 
 @WebMvcTest(GetPriceController.class)
@@ -33,7 +35,7 @@ public class GetPriceControllerTest {
         params = new GetPriceParam("2020-06-16 21:00:00", 35455L, 1);
 
         PriceResponseDto response = createResponse();
-        when(useCase.handle(params)).thenReturn(response);
+        when(useCase.handle(params)).thenReturn(PriceFixture.createResponse());
         mockMvc
                 .perform(MockMvcRequestBuilders.get("/final-price")
                         .param("date", "2020-06-16 21:00:00")

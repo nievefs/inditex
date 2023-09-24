@@ -1,4 +1,4 @@
-package com.ecommerce.apih2.price.application.dto;
+package com.ecommerce.apih2.price.infrastructure.dto;
 
 public record PriceResponseDto(
       Long productId,

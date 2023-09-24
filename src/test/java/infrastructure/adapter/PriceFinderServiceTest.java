@@ -1,11 +1,12 @@
 package infrastructure.adapter;
 
 import com.ecommerce.apih2.Entrypoint;
-import com.ecommerce.apih2.price.application.mapper.DateMapper;
 import com.ecommerce.apih2.price.domain.entity.Price;
+import com.ecommerce.apih2.price.domain.port.DateMapper;
 import com.ecommerce.apih2.price.domain.vo.BrandId;
 import com.ecommerce.apih2.price.domain.vo.PriceApplicationDate;
 import com.ecommerce.apih2.price.domain.vo.ProductId;
+import com.ecommerce.apih2.price.infrastructure.adapter.DateMapperImpl;
 import com.ecommerce.apih2.price.infrastructure.adapter.PriceFinderService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
@@ -29,12 +30,15 @@ public class PriceFinderServiceTest {
     @Autowired
     private PriceFinderService priceFinderService;
 
+    @Autowired
+    private DateMapper dateMapper;
+
     @Test
     @DisplayName("Test 1: petición a las 10:00 del día 14 del producto 35455 para la brand 1 (ZARA)")
     void test1_findPriceForDateAndProductAndBrand() {
 
         Optional<Price> price = priceFinderService.findByParams(
-                new PriceApplicationDate(DateMapper.mapToLocalDateTime("2020-06-14 10:00:00")),
+                new PriceApplicationDate(dateMapper.mapToLocalDateTime("2020-06-14 10:00:00")),
                 new ProductId(35455L),
                 new BrandId(1)
         );
@@ -52,7 +56,7 @@ public class PriceFinderServiceTest {
     void test2_findPriceForDateAndProductAndBrand() {
 
         Optional<Price> price = priceFinderService.findByParams(
-                new PriceApplicationDate(DateMapper.mapToLocalDateTime("2020-06-14 16:00:00")),
+                new PriceApplicationDate(dateMapper.mapToLocalDateTime("2020-06-14 16:00:00")),
                 new ProductId(35455L),
                 new BrandId(1)
         );
@@ -70,7 +74,7 @@ public class PriceFinderServiceTest {
     void test3_findPriceForDateAndProductAndBrand() {
 
         Optional<Price> price = priceFinderService.findByParams(
-                new PriceApplicationDate(DateMapper.mapToLocalDateTime("2020-06-14 21:00:00")),
+                new PriceApplicationDate(dateMapper.mapToLocalDateTime("2020-06-14 21:00:00")),
                 new ProductId(35455L),
                 new BrandId(1)
         );
@@ -88,7 +92,7 @@ public class PriceFinderServiceTest {
     void test4_findPriceForDateAndProductAndBrand() {
 
         Optional<Price> price = priceFinderService.findByParams(
-                new PriceApplicationDate(DateMapper.mapToLocalDateTime("2020-06-15 10:00:00")),
+                new PriceApplicationDate(dateMapper.mapToLocalDateTime("2020-06-15 10:00:00")),
                 new ProductId(35455L),
                 new BrandId(1)
         );
@@ -106,7 +110,7 @@ public class PriceFinderServiceTest {
     void test5_findPriceForDateAndProductAndBrand() {
 
         Optional<Price> price = priceFinderService.findByParams(
-                new PriceApplicationDate(DateMapper.mapToLocalDateTime("2020-06-15 21:00:00")),
+                new PriceApplicationDate(dateMapper.mapToLocalDateTime("2020-06-15 21:00:00")),
                 new ProductId(35455L),
                 new BrandId(1)
         );
@@ -124,7 +128,7 @@ public class PriceFinderServiceTest {
     public void test_findPriceNotExistentByParamProductId() {
 
         Optional<Price> price = priceFinderService.findByParams(
-                new PriceApplicationDate(DateMapper.mapToLocalDateTime("2020-06-15 10:00:00")),
+                new PriceApplicationDate(dateMapper.mapToLocalDateTime("2020-06-15 10:00:00")),
                 new ProductId(36000L),
                 new BrandId(2)
         );
@@ -136,7 +140,7 @@ public class PriceFinderServiceTest {
     public void test_findPriceNotExistentByParamBrandId() {
 
         Optional<Price> price = priceFinderService.findByParams(
-                new PriceApplicationDate(DateMapper.mapToLocalDateTime("2020-06-15 10:00:00")),
+                new PriceApplicationDate(dateMapper.mapToLocalDateTime("2020-06-15 10:00:00")),
                 new ProductId(35455L),
                 new BrandId(8)
         );

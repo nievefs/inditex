@@ -6,7 +6,7 @@ import com.ecommerce.apih2.price.domain.vo.BrandId;
 import com.ecommerce.apih2.price.domain.vo.PriceApplicationDate;
 import com.ecommerce.apih2.price.domain.vo.ProductId;
 import com.ecommerce.apih2.price.infrastructure.entity.PriceEntity;
-import com.ecommerce.apih2.price.application.mapper.PriceMapper;
+import com.ecommerce.apih2.price.infrastructure.mapper.PriceMapper;
 import com.ecommerce.apih2.price.infrastructure.repository.PriceJpaRepository;
 import org.springframework.stereotype.Service;
 

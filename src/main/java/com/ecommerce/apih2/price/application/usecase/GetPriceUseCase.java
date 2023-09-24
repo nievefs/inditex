@@ -1,8 +1,7 @@
 package com.ecommerce.apih2.price.application.usecase;
 
-import com.ecommerce.apih2.price.application.dto.PriceResponseDto;
-import com.ecommerce.apih2.price.application.mapper.DateMapper;
-import com.ecommerce.apih2.price.application.mapper.PriceMapper;
+import com.ecommerce.apih2.price.domain.port.DateMapper;
+import com.ecommerce.apih2.price.infrastructure.mapper.PriceMapper;
 import com.ecommerce.apih2.price.application.param.GetPriceParam;
 import com.ecommerce.apih2.price.domain.entity.Price;
 import com.ecommerce.apih2.price.domain.exception.PriceNotFoundException;
@@ -16,22 +15,20 @@ import org.springframework.stereotype.Service;
 public class GetPriceUseCase {
 
     private final PriceRepository priceRepository;
-    private final PriceMapper priceMapper;
+    private final DateMapper dateMapper;
 
-    public GetPriceUseCase(PriceRepository priceRepository, PriceMapper priceMapper) {
+    public GetPriceUseCase(PriceRepository priceRepository, DateMapper dateMapper) {
         this.priceRepository = priceRepository;
-        this.priceMapper = priceMapper;
+        this.dateMapper = dateMapper;
     }
 
-    public PriceResponseDto handle(GetPriceParam params){
-        PriceApplicationDate date = new PriceApplicationDate(DateMapper.mapToLocalDateTime(params.date()));
+    public Price handle(GetPriceParam params){
+        PriceApplicationDate date = new PriceApplicationDate(dateMapper.mapToLocalDateTime(params.date()));
         ProductId productId = new ProductId(params.productId());
         BrandId brandId = new BrandId(params.brandId());
 
-        Price price = priceRepository.findByParams(date, productId, brandId)
+        return priceRepository.findByParams(date, productId, brandId)
                 .orElseThrow(PriceNotFoundException::new);
-
-        return priceMapper.toDto(price);
     }
 
 }
