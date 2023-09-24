@@ -1,7 +1,6 @@
 package com.ecommerce.apih2.price.application.usecase;
 
 import com.ecommerce.apih2.price.domain.port.DateMapper;
-import com.ecommerce.apih2.price.infrastructure.mapper.PriceMapper;
 import com.ecommerce.apih2.price.application.param.GetPriceParam;
 import com.ecommerce.apih2.price.domain.entity.Price;
 import com.ecommerce.apih2.price.domain.exception.PriceNotFoundException;

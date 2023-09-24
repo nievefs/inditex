@@ -38,7 +38,7 @@ CURR: iso de la moneda.
 - Test 5: petición a las 21:00 del día 16 del producto 35455 para la brand 1 (ZARA)
 
 
- ****Nota**: Estas 5 casuísticas de prueba se encuentran implementadas en el fichero de `/src/test/java/infrastructure/adapter/PriceFinderServiceTest`
+ ****Nota**: Estas 5 casuísticas de prueba se encuentran implementadas con tests de integración en el fichero de `/src/test/java/infrastructure/adapter/PriceFinderServiceTest` y con tests E2E en el fichero `/src/test/java/infrastructure/controller/GetPriceControllerE2ETest`.
 
 ## Arquitectura y Diseño
 - Este proyecto sigue una arquitectura hexagonal (Hexagonal Architecture) y utiliza el enfoque de Domain-Driven Design (DDD) para organizar el código y garantizar una estructura clara y mantenible. Los detalles de diseño específicos se pueden encontrar en los paquetes y clases relevantes dentro del código fuente.
