@@ -4,6 +4,7 @@ import com.ecommerce.apih2.price.domain.error.ApiError;
 import com.ecommerce.apih2.price.domain.exception.PriceNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -31,6 +32,12 @@ public class GlobalControllerAdvice {
     @ExceptionHandler(MethodArgumentTypeMismatchException.class)
     public ResponseEntity<ApiError> handleMethodArgumentTypeMismatch(MethodArgumentTypeMismatchException ex) {
         ApiError apiError = new ApiError(HttpStatus.BAD_REQUEST.value(), "INVALID_ARGUMENT");
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(apiError);
+    }
+
+    @ExceptionHandler(MissingServletRequestParameterException.class)
+    public ResponseEntity<ApiError> handleMissingServletRequestParameterException(MissingServletRequestParameterException ex) {
+        ApiError apiError = new ApiError(HttpStatus.BAD_REQUEST.value(), "REQUIRED_ARGUMENT");
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(apiError);
     }
 

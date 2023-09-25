@@ -10,6 +10,7 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.ContextConfiguration;
+import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 import java.time.format.DateTimeParseException;
 
@@ -56,5 +57,15 @@ public class GlobalControllerAdviceTest {
 
         Assertions.assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
         Assertions.assertEquals("INVALID_ARGUMENT", response.getBody().message());
+    }
+
+    @Test
+    public void should_handleMissingServletRequestParameterException() {
+        MissingServletRequestParameterException ex = new MissingServletRequestParameterException(
+                "productId", "long");
+        ResponseEntity<ApiError> response = globalControllerAdvice.handleMissingServletRequestParameterException(ex);
+
+        Assertions.assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
+        Assertions.assertEquals("REQUIRED_ARGUMENT", response.getBody().message());
     }
 }

@@ -7,6 +7,5 @@ public record PriceResponseDto(
       String starDate,
       String endDate,
       Double price
-
 ) {
 }

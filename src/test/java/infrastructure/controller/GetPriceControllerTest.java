@@ -34,7 +34,6 @@ public class GetPriceControllerTest {
 
         params = new GetPriceParam("2020-06-16 21:00:00", 35455L, 1);
 
-        PriceResponseDto response = createResponse();
         when(useCase.handle(params)).thenReturn(PriceFixture.createResponse());
         mockMvc
                 .perform(MockMvcRequestBuilders.get("/final-price")
@@ -43,17 +42,6 @@ public class GetPriceControllerTest {
                         .param("brandId", "1")
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers.status().isOk());
-    }
-
-    private PriceResponseDto createResponse(){
-        return new PriceResponseDto(
-                35455L,
-                1,
-                4,
-                "2020-06-15 16:00:00",
-                "2020-12-31 23:59:59",
-                38.95
-        );
     }
 
 }

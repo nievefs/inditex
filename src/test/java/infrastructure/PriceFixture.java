@@ -1,9 +1,7 @@
 package infrastructure;
 
-import com.ecommerce.apih2.price.infrastructure.dto.PriceResponseDto;
 import com.ecommerce.apih2.price.domain.entity.Price;
 import com.ecommerce.apih2.price.domain.vo.*;
-
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -24,16 +22,5 @@ public class PriceFixture {
                new FinalPrice(40.00),
                new Curr("EUR")
        );
-    }
-
-    public static PriceResponseDto createDto(){
-        return new PriceResponseDto(
-            35000L,
-            1,
-            2,
-            "2023-02-15 00:00:00",
-            "2023-09-15 20:00:00",
-            40.40
-        );
     }
 }
