@@ -161,7 +161,7 @@ public class GetPriceControllerE2ETest {
 
     @Test
     @DisplayName("E2E-Test 8: petición a las 21:00 del día 16 del producto prod-invalid para la brand 1(ZARA)")
-    public void test8_GetPriceEndpoint_ReturnInvalidDate() {
+    public void test8_GetPriceEndpoint_ReturnInvalidArgument() {
         given()
                 .param("date", "2020/06/16-21:00:00")
                 .param("productId", "prod-invalid")
@@ -173,5 +173,21 @@ public class GetPriceControllerE2ETest {
                 .contentType(Matchers.containsString("application/json"))
                 .body("errorCode", equalTo(400))
                 .body("message", equalTo("INVALID_ARGUMENT"));
+    }
+
+    @Test
+    @DisplayName("E2E-Test 9: petición a las 10:00 del día 14 sin productId para la brand 1(ZARA)")
+    public void test9_GetPriceEndpoint_ReturnRequiredArgument() {
+        given()
+                .param("date", "2020-06-14 10:00:00")
+                .param("productId", "")
+                .param("brandId", 1)
+                .when()
+                .get("/final-price")
+                .then()
+                .statusCode(400)
+                .contentType(Matchers.containsString("application/json"))
+                .body("errorCode", equalTo(400))
+                .body("message", equalTo("REQUIRED_ARGUMENT"));
     }
 }
